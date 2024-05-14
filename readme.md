@@ -3,20 +3,26 @@
 ![Example of MMM-Quiz](./example_1.png)
 ![Another example of MMM-Quiz](./example_2.png)
 
-This [MagicMirror²][mm] Module is designed to let you play a quiz. Answering the questions can be done by clicking on the elements or interacting through the notifications.
+This [MagicMirror²][mm] Module is designed to let you play a quiz. Answering the questions can be done by clicking on the elements or interacting through the notifications. There are always four options where only one will be the correct one. When the correct one has been answered, a new question will appear.
 
 ## Installation
 
-In your terminal, go to your MagicMirror's Module folder:
+### Install
+
+In your terminal, go to your MagicMirror's Module folder and clone MMM-Quiz:
 
 ```bash
 cd ~/MagicMirror/modules
-```
-Clone this repository:
-```bash
 git clone https://github.com/Dennis-Rosenbaum/MMM-Quiz.git
 ```
-Configure the module in your config.js file.
+
+### Update
+
+```bash
+cd ~/MagicMirror/modules/MMM-Quiz
+git pull
+npm update
+```
 
 ## Using the module
 
@@ -25,9 +31,7 @@ To use this module, add it to the modules array in the `config/config.js` file:
 modules: [
     {
         module: 'MMM-Quiz',
-        position: 'lower_third',
-        config: {
-        }
+        position: 'lower_third'
     }
 ]
 ```
@@ -54,8 +58,8 @@ Option|Possible values|Description
 ------|------|-----------
 `maxWidth`|200px, 40%|Should the module have a maximum width
 `align`|left, center, right|Should the content of the module be aligned
-`difficulties`|easy, medium, hard|Comma separated list of difficulties of questions to return. If not provided, all difficulties will be used. Example: 'easy', 'easy,medium'
-`tags`|music, sport_and_leisure, film_and_tv, arts_and_literature, history, society_and_culture, science, geography, food_and_drink, general_knowledge|Comma separated list of tags to return questions from. If not provided, all tags will be used. Example: 'science', 'science,music'
+`difficulties`|easy, medium, hard|Comma separated list of difficulties of questions to return. If not provided, all difficulties will be used. Also possible to mix multiple: 'easy,medium'
+`tags`|music, sport_and_leisure, film_and_tv, arts_and_literature, history, society_and_culture, science, geography, food_and_drink, general_knowledge|Comma separated list of tags to return questions from. If not provided, all tags will be used. Also possible to mix multiple: 'science,music'
 
 ## DOM example
 The dom will look like this:
