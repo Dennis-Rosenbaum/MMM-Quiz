@@ -1,0 +1,57 @@
+.MMM-Quiz .error-container {
+    color: red;
+}
+
+.MMM-Quiz .question {
+    margin-bottom: 10px;
+}
+
+.MMM-Quiz .answers {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.MMM-Quiz .answer {
+    border: 2px solid white;
+    display: inline-flex;
+    padding: 5px 15px;
+    border-radius: 5px;
+    gap: 10px;
+    transition: border-color 5s linear;
+}
+
+.MMM-Quiz .answer.correct {
+    animation: 3s infinite alternate backgroundgreen;
+    border-color: green;
+}
+
+.MMM-Quiz .answer.incorrect {
+    border-color: red;
+    animation: 3s infinite alternate backgroundred;
+}
+
+.MMM-Quiz .answer-id {
+    padding-right: 10px;
+    border-right: 2px solid;
+}
+
+@keyframes backgroundgreen {
+    from {
+        background-color: green;
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+@keyframes backgroundred {
+    from {
+        background-color: red;
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
