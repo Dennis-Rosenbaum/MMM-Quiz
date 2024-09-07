@@ -1,19 +1,19 @@
-Module.register('MMM-Quiz', {
+Module.register("MMM-Quiz", {
 
   defaults: {
-    // Possible values: integer or percentage. 
+    // Possible values: integer or percentage.
     // Example: '200px' or '40%'
-    maxWidth: '',
+    maxWidth: "",
     // Possible values: left, center, right
-    align: 'center',
-    // Possible values: easy, medium, hard. 
-    // Comma separated list of difficulties of questions to return. If not provided, all difficulties will be used. 
+    align: "center",
+    // Possible values: easy, medium, hard.
+    // Comma separated list of difficulties of questions to return. If not provided, all difficulties will be used.
     // Example: 'easy' or 'easy,medium'
-    difficulties: '',
-    // Possible values: music, sport_and_leisure, film_and_tv, arts_and_literature, history, society_and_culture, science, geography, food_and_drink, general_knowledge. 
-    // Comma separated list of tags to return questions from. If not provided, all tags will be used. 
+    difficulties: "",
+    // Possible values: music, sport_and_leisure, film_and_tv, arts_and_literature, history, society_and_culture, science, geography, food_and_drink, general_knowledge.
+    // Comma separated list of tags to return questions from. If not provided, all tags will be used.
     // Example: 'science' or 'science,music'
-    tags: '',
+    tags: "",
   },
 
   /**
@@ -31,7 +31,7 @@ Module.register('MMM-Quiz', {
     this.currentQuestionIndex = 0
     this.userAnswers = new Array(4).fill(false)
     this.questions = undefined
-    this.timeoutForNextQuestion = 4000 //this should be a great timeout to see that you correctly answered the question
+    this.timeoutForNextQuestion = 4000 // this should be a great timeout to see that you correctly answered the question
     this.getNextQuestionSet()
   },
 
@@ -108,7 +108,7 @@ Module.register('MMM-Quiz', {
       }
       answerWrapper.setAttribute("data-id", index)
       answerWrapper.setAttribute("data-is-correct-answer", element.correct)
-      answerWrapper.addEventListener("click", () => { self.processAnswer({ "index": index }) })
+      answerWrapper.addEventListener("click", () => { self.processAnswer({ index: index }) })
 
       const answerIdElement = document.createElement("div")
       answerIdElement.className = "answer-id"
@@ -132,7 +132,7 @@ Module.register('MMM-Quiz', {
 
   getNextQuestionSet() {
     Log.log(`[${this.name}] get next question set`, this)
-    this.sendSocketNotification('GET_QUIZ_QUESTIONS', {
+    this.sendSocketNotification("GET_QUIZ_QUESTIONS", {
       limit: this.questionLimit,
       difficulties: this.config.difficulties,
       tags: this.config.tags
@@ -153,7 +153,6 @@ Module.register('MMM-Quiz', {
   },
 
   processQuestion(questionIndex) {
-
     // We retrieve a [limit] amount of questions and loop through them
     // if all the questions have been played then we should retrieve more questions
     if (questionIndex >= this.questionLimit) {
@@ -214,10 +213,10 @@ Module.register('MMM-Quiz', {
       return
 
     for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+      const j = Math.floor(Math.random() * (i + 1))
+      const temp = array[i]
+      array[i] = array[j]
+      array[j] = temp
     }
   },
-});
+})

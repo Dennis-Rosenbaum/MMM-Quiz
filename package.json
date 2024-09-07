@@ -4,8 +4,9 @@
   "description": "Play a quiz on your MagicMirror². There are always four options where only one will be the correct one. When the correct one has been answered, a new question will appear.",
   "main": "MMM-Quiz.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "homepage": "https://github.com/Dennis-Rosenbaum/MMM-Quiz#readme",
   "devDependencies": {
     "@eslint/js": "^9.10.0",
+    "@stylistic/eslint-plugin": "^2.7.2",
     "eslint": "^9.10.0",
     "globals": "^15.9.0"
   }
