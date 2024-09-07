@@ -14,8 +14,6 @@ In your terminal, go to your MagicMirror's Module folder and clone MMM-Quiz:
 ```bash
 cd ~/MagicMirror/modules
 git clone https://github.com/Dennis-Rosenbaum/MMM-Quiz
-cd MMM-Quiz
-npm install
 ```
 
 ### Update
@@ -23,7 +21,6 @@ npm install
 ```bash
 cd ~/MagicMirror/modules/MMM-Quiz
 git pull
-npm install
 ```
 
 ## Using the module
@@ -100,5 +97,11 @@ If you want to answer the third question, you would write:
 ```js
 this.sendNotification("QUIZ_ANSWER", 2)
 ```
+
+## Developer commands
+
+- `npm install` - Install devDependencies like ESLint.
+- `npm run lint` - Run linting and formatter checks.
+- `npm run lint:fix` - Fix linting and formatter issues.
 
 [mm]: https://github.com/MagicMirrorOrg/MagicMirror
