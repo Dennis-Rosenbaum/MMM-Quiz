@@ -26,18 +26,17 @@ git pull
 ## Using the module
 
 To use this module, add it to the modules array in the `config/config.js` file:
+
 ```js
-modules: [
     {
         module: 'MMM-Quiz',
         position: 'lower_third'
-    }
-]
+    },
 ```
 
 Or you could use all the options:
+
 ```js
-modules: [
     {
         module: 'MMM-Quiz',
         position: 'lower_third',
@@ -47,8 +46,7 @@ modules: [
             difficulties: 'easy,medium',
             tags: 'sport_and_leisure,history'
         }
-    }
-]
+    },
 ```
 
 ## Configuration options
@@ -61,6 +59,7 @@ Option|Possible values|Description
 `tags`|music, sport_and_leisure, film_and_tv, arts_and_literature, history, society_and_culture, science, geography, food_and_drink, general_knowledge|Comma separated list of tags to return questions from. If not provided, all tags will be used. Also possible to mix multiple: 'science,music'
 
 ## DOM example
+
 The dom will look like this:
 
 ```html
@@ -85,7 +84,7 @@ The dom will look like this:
 </div>
 ```
 
-When the user inputs an answer, the class 'correct' or 'incorrect' will be added to the answer. 
+When the user inputs an answer, the class 'correct' or 'incorrect' will be added to the answer.
 
 ## Sending notifications to the module
 
@@ -94,6 +93,7 @@ Notification|Description
 `QUIZ_ANSWER`|Give an answer to the current question, the payload should contain the index value (0-3)<br/>**Expected Value type:** `{int}`
 
 If you want to answer the third question, you would write:
+
 ```js
 this.sendNotification("QUIZ_ANSWER", 2)
 ```
