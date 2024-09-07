@@ -13,7 +13,9 @@ In your terminal, go to your MagicMirror's Module folder and clone MMM-Quiz:
 
 ```bash
 cd ~/MagicMirror/modules
-git clone https://github.com/Dennis-Rosenbaum/MMM-Quiz.git
+git clone https://github.com/Dennis-Rosenbaum/MMM-Quiz
+cd MMM-Quiz
+npm install
 ```
 
 ### Update
@@ -21,7 +23,7 @@ git clone https://github.com/Dennis-Rosenbaum/MMM-Quiz.git
 ```bash
 cd ~/MagicMirror/modules/MMM-Quiz
 git pull
-npm update
+npm install
 ```
 
 ## Using the module
@@ -99,5 +101,4 @@ If you want to answer the third question, you would write:
 this.sendNotification("QUIZ_ANSWER", 2)
 ```
 
-
-[mm]: https://github.com/MichMich/MagicMirror
+[mm]: https://github.com/MagicMirrorOrg/MagicMirror

@@ -1,7 +1,6 @@
-const node_helper = require("node_helper");
-const Log = require("logger");
+const NodeHelper = require("node_helper");
 
-module.exports = node_helper.create({
+module.exports = NodeHelper.create({
 
     async socketNotificationReceived(notification, payload) {
         const self = this;

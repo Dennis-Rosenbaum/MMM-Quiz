@@ -20,7 +20,7 @@ Module.register('MMM-Quiz', {
    * Apply the default quiz styles.
    */
   getStyles() {
-    return ['quiz.css']
+    return ["quiz.css"]
   },
 
   /**
@@ -37,11 +37,11 @@ Module.register('MMM-Quiz', {
 
   socketNotificationReceived: function (notification, payload) {
     console.log("Socket notification received", notification)
-    if (notification === 'QUIZ_QUESTIONS') {
+    if (notification === "QUIZ_QUESTIONS") {
       Log.log(`[${this.name}] received new set questions`, payload)
       this.clearError()
       this.processQuestions(payload)
-    } else if (notification === 'QUIZ_QUESTIONS_FAILED') {
+    } else if (notification === "QUIZ_QUESTIONS_FAILED") {
       Log.error(`[${this.name}] Receiving quiz questions failed`, payload)
       this.setError("Could not retrieve quiz data")
     }
@@ -61,16 +61,16 @@ Module.register('MMM-Quiz', {
   },
 
   getDomError(error) {
-    console.log("Render dom error")
-    const wrapper = document.createElement('div')
-    wrapper.className = 'error-container'
+    Log.log("Render dom error")
+    const wrapper = document.createElement("div")
+    wrapper.className = "error-container"
     wrapper.innerHTML = error
     return wrapper
   },
 
   getDomLoadingQuestions() {
-    console.log("Render loading the questions")
-    const wrapper = document.createElement('div')
+    Log.log("Render loading the questions")
+    const wrapper = document.createElement("div")
     wrapper.innerHTML = "Loading new questions...."
     return wrapper
   },
@@ -78,7 +78,7 @@ Module.register('MMM-Quiz', {
   getDomQuestion() {
     const self = this
 
-    const wrapper = document.createElement('div')
+    const wrapper = document.createElement("div")
 
     if (this.config.maxWidth)
       wrapper.style.maxWidth = this.config.maxWidth
@@ -93,7 +93,7 @@ Module.register('MMM-Quiz', {
     answersWrapper.className = "answers"
     answersWrapper.style.justifyContent = this.config.align
 
-    let answerId = 'A'
+    let answerId = "A"
     for (let index = 0; index < this.currentQuestion.answers.length; index++) {
       const element = this.currentQuestion.answers[index]
       const hasBeenAnswered = this.userAnswers[index]
@@ -201,8 +201,8 @@ Module.register('MMM-Quiz', {
    * @param {number} payload the payload type.
    */
   notificationReceived(notification, payload) {
-    if (notification === 'QUIZ_ANSWER') {
-      processAnswer({ index: payload })
+    if (notification === "QUIZ_ANSWER") {
+      this.processAnswer({ index: payload })
     }
   },
 
@@ -219,7 +219,5 @@ Module.register('MMM-Quiz', {
       array[i] = array[j];
       array[j] = temp;
     }
-
   },
-
 });
